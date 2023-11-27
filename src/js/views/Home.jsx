@@ -1,15 +1,19 @@
+//Importaciones de React.
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+
+//Componentes.
+import { Footer } from "../component/Footer.jsx";
+
+//Estilos de CSS.
 import "../../styles/home.css";
+
 
 export const Home = () => (
 	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
+	
+		<button className="btn btn-success">
 			If you see this green button, bootstrap is working
-		</a>
+		</button>
+		<Footer/>
 	</div>
 );
