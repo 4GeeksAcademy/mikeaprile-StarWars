@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			favorites:["iteam1"],
+			favorites:[],
 			characters: [],
 		    planets: [],
 			startships:[],
