@@ -18,8 +18,6 @@ import { Starships } from "./views/Starships.jsx";
 import { StarshipDetails } from "./views/StarshipDetails.jsx";
 
 
-
-
 //Toda la composicion.
 const Layout = () => {
 

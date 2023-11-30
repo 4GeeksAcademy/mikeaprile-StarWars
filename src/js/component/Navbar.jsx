@@ -1,9 +1,11 @@
 //Importaciones de React.
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.js";
+
+//Importacion Componentes/Imagenes
 import starwarsYellow from '../../img/starwars_yellow.png';
 import { BtnFavorite } from "./BtnFavorite.jsx";
-import { Context } from "../store/appContext.js";
 
 export const Navbar = () => {
 	const  { store, actions } = useContext (Context)

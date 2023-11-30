@@ -1,6 +1,9 @@
+//Importacion de React.
 import React,  { useContext }  from "react"; 
 import { Context } from "../store/appContext.js" 
 import { Link } from "react-router-dom"; 
+
+//Importacion de CSS/Imagenes.
 import Naves from '../../img/Naves.jpeg'
 import "../../styles/character.css";
 

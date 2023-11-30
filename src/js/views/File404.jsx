@@ -1,4 +1,7 @@
+//Importacion de React.
 import React from "react";
+
+//Importacion CSS/Imagenes.
 import "../../styles/index.css";
 import StarWar404 from '../../img/404.png'
 

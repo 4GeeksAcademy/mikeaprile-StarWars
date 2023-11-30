@@ -2,14 +2,13 @@
 import React,  { useContext, useState }  from "react"; //1. Import hook useContext
 import { Context } from "../store/appContext.js" //2.Import Context
 import { Link } from "react-router-dom";
+
+
+//Estilos CSS/Imagenes.
 import Personajes from '../../img/Personajes.jpeg'
-
-
-
-
-
-//Estilos CSS.
 import "../../styles/character.css";
+
+
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);

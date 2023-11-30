@@ -1,6 +1,9 @@
+//Importacion de React.
 import React,  { useContext }  from "react"; 
 import { Context } from "../store/appContext.js" 
 import { Link } from "react-router-dom"; 
+
+//Importacion CSS/Imagenes.
 import Planeta from '../../img/Planeta.jpeg'
 import "../../styles/character.css";
 

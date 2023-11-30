@@ -1,4 +1,4 @@
-//import react into the bundle
+//Importacion de React.
 import React from 'react'
 import {createRoot} from 'react-dom/client'
 

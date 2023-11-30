@@ -1,11 +1,8 @@
 //Importaciones de React.
 import React from "react";
 
-//Componentes.
-
+//Estilos de CSS/Imagenes.
 import Letras from '../../img/letras.gif'
- 
-//Estilos de CSS.
 import "../../styles/home.css";
 
 

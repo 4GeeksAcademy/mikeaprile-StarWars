@@ -1,6 +1,9 @@
+//Importacion de React.
 import React, {useContext, useEffect} from "react";  
 import { Link, useParams }  from "react-router-dom"; 
 import { Context } from "../store/appContext.js"; 
+
+//Importacion de Componentes/Imagenes
 import { Spinner } from "../component/Spinner.jsx";
 import Personajes from '../../img/Personajes.jpeg'
 
@@ -10,6 +13,7 @@ export const CharacterDetails = () =>{
    
     const params = useParams();
     console.log(params);
+    
     
     useEffect(()=>{
         async function fetchData() {

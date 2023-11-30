@@ -1,6 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			
+		//Donde se almacenan los datos que traigo de la API.
 			favorites:[],
 			characters: [],
 		    planets: [],
@@ -11,18 +13,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		},
 		actions: {
-			// fetch().then().then(data => setStore({ "foo": data.bar }))
-
+			//Funciones para el boton de Favoritos.
 			addFav: (item) => {
 				const store = setStore({favorites: [...getStore().favorites, item]})
 				localStorage.setItem ('favorite', JSON.stringify(store))
 			},
-
 			deleteFav: (name) => {
 				const store = getStore();
 				setStore({ favorites: store.favorites.filter( (iteam, id) => { return iteam != name} )})
 			},
+//-----------------------------------------------------------------------------------------------------------------------------------------
 
+			//Funciones para traer los datos de los personajes y sus detalles.
 			getCharacter: async () => {
 				const url = 'https://www.swapi.tech/api/' + 'people';
 				const opcions = {method: 'GET'};
@@ -37,7 +39,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log('Error', response.status, response.statusText);
 				}
 			},
-
 			getCharacterDetails: async (id) => {
 				const url = 'https://www.swapi.tech/api/' + "/people/" + id;
 				const options = { method: "GET"};
@@ -52,7 +53,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log('Error', response.status, response.statusText);
 				}
 			},
+//-----------------------------------------------------------------------------------------------------------------------------------------
 
+			//Funciones para traer los datos de las naves y sus detalles.
 			getStarships: async () => {
 				const url = 'https://www.swapi.tech/api/' + "/starships";
 				const options = {
@@ -68,7 +71,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error: ", response.status, response.statusText);
 				}
 			},
-
 			getStarshipDetails: async (id) => {
 				const url = 'https://www.swapi.tech/api/' + "/starships/" + id;
 				const options = {
@@ -84,7 +86,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error: ", response.status, response.statusText);
 				}
 			},
-			
+//-----------------------------------------------------------------------------------------------------------------------------------------	
+
+			//Funciones para traer los datos de los planetas y sus detalles.
 			getPlanets: async () => {
 				const url = 'https://www.swapi.tech/api/' + "/planets/";
 				const options = {
@@ -100,7 +104,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error: ", response.status, response.statusText);
 				}
 			},
-
 			getPlanetDetails: async (id) => {
 				const url = 'https://www.swapi.tech/api/' + "/planets/" + id;
 				const options = {

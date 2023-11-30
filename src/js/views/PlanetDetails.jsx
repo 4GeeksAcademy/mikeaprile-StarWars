@@ -1,16 +1,18 @@
-import React, { useContext, useEffect } from "react";  //1. Import hook useContext (so we are able to import useParams)
-import { Link, useParams }  from "react-router-dom"; //import Link
-import { Context } from "../store/appContext.js"; //2. Import Context
+//Importacion de React.
+import React, { useContext, useEffect } from "react";  
+import { Link, useParams }  from "react-router-dom";
+import { Context } from "../store/appContext.js"; 
+
+//Importacion Componentes/Imagenes.
 import { Spinner } from "../component/Spinner.jsx";
 import Planeta from '../../img/Planeta.jpeg'
 
 export const PlanetDetails = () =>{
-    const  {store, actions } = useContext (Context); //3. destructuring store & actions
-    
-    //get back the param of the url
+    const  {store, actions } = useContext (Context); 
     const params = useParams();
     console.log(params);
    
+
     useEffect(()=>{
         async function fetchData() {
             const response = await actions.getPlanetDetails(params.planetId);
