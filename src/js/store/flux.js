@@ -4,10 +4,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites:[],
 			characters: [],
 		    planets: [],
-			startships:[],
+			starships:[],
 			characterDetails: {},
 			planetDetails:{},
-			startshipsDetails: {}
+			starshipDetails: {}
 
 		},
 		actions: {
@@ -45,8 +45,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (response.ok) {
 					const data = await response.json();
-					console.log(data);
-					setStore({ characterDetails: data.result.properties });
+						console.log(data);
+						setStore({ characterDetails: data.result.properties });
 				
 				} else {
 					console.log('Error', response.status, response.statusText);
@@ -54,68 +54,68 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getStarships: async () => {
-				const url = 'https://www.swapi.tech/api/' + "/startships/";
-				const options = { method: "GET"};
+				const url = 'https://www.swapi.tech/api/' + "/starships";
+				const options = {
+					method: "GET"
+				};
 				const response = await fetch(url, options);
-				
-
+				console.log(response);
 				if (response.ok) {
 					const data = await response.json();
-					setStore({ startships: data.result.properties });
 					console.log(data);
-					
+					setStore({ starships: data.results });
 				} else {
-					console.log('Error', response.status, response.statusText);
+					console.log("Error: ", response.status, response.statusText);
 				}
 			},
 
-			getStarshipsDetails: async (id) => {
-				const url = 'https://www.swapi.tech/api/' + "/startships/" + id;
-				const options = { method: "GET"};
+			getStarshipDetails: async (id) => {
+				const url = 'https://www.swapi.tech/api/' + "/starships/" + id;
+				const options = {
+					method: "GET"
+				};
 				const response = await fetch(url, options);
-				
-
+				console.log(response);
 				if (response.ok) {
 					const data = await response.json();
-					setStore({ startshipsDetails: data.result.properties });
 					console.log(data);
-					
+					setStore({ starshipDetails: data.result.properties });
 				} else {
-					console.log('Error', response.status, response.statusText);
+					console.log("Error: ", response.status, response.statusText);
 				}
 			},
 			
 			getPlanets: async () => {
 				const url = 'https://www.swapi.tech/api/' + "/planets/";
-				const options = { method: "GET"};
+				const options = {
+					method: "GET"
+				};
 				const response = await fetch(url, options);
-				
-
+				console.log(response);
 				if (response.ok) {
 					const data = await response.json();
-					setStore({ planets: data.result.properties });
 					console.log(data);
-					
+					setStore({ planets: data.results });
 				} else {
-					console.log('Error', response.status, response.statusText);
+					console.log("Error: ", response.status, response.statusText);
 				}
 			},
 
-			getPlanetsDetails: async (id) => {
+			getPlanetDetails: async (id) => {
 				const url = 'https://www.swapi.tech/api/' + "/planets/" + id;
-				const options = { method: "GET"};
+				const options = {
+					method: "GET"
+				};
 				const response = await fetch(url, options);
-				
-
+				console.log(response);
 				if (response.ok) {
 					const data = await response.json();
-					setStore({ planetDetails: data.result.properties });
 					console.log(data);
-					
+					setStore({ planetDetails: data.result.properties });
 				} else {
-					console.log('Error', response.status, response.statusText);
+					console.log("Error: ", response.status, response.statusText);
 				}
-			}
+			},
 
 		},
 				

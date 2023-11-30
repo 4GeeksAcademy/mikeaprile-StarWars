@@ -5,14 +5,18 @@ import ScrollToTop from "./component/ScrollToTop.js";
 
 //Componentes.
 import { Navbar } from "./component/Navbar.jsx";
-import { NotFound404 } from "./component/NotFound404.jsx";
-import { BtnFavorite } from "./component/BtnFavorite.jsx";
 import injectContext from "./store/appContext";
 
 //Vistas.
+import { File404 } from "./views/File404.jsx";
 import { Home } from "./views/Home.jsx";
 import { Characters } from "./views/Characters.jsx";
 import { CharacterDetails } from "./views/CharacterDetails.jsx";
+import { Planets } from "./views/Planets.jsx";
+import { PlanetDetails } from "./views/PlanetDetails.jsx";
+import { Starships } from "./views/Starships.jsx";
+import { StarshipDetails } from "./views/StarshipDetails.jsx";
+
 
 
 
@@ -29,8 +33,12 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/characters" element={<Characters />} />
-						<Route path="/character-details/:characterId" element={<CharacterDetails />} />
-						<Route path="*" element={<NotFound404/>} />
+						<Route path="/characters/:characterId" element={<CharacterDetails />} />
+						<Route path="/planets" element={<Planets/>}/>
+						<Route path="/planets/:planetId" element={<PlanetDetails/>}/>
+						<Route path="/starships" element={<Starships/>}/>
+						<Route path="/starships/:starshipId" element={<StarshipDetails/>}/>
+						<Route path="*" element={<File404 />} />
 					</Routes>
 				</ScrollToTop>
 			</BrowserRouter>

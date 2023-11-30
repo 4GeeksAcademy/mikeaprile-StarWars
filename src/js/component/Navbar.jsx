@@ -1,36 +1,26 @@
 //Importaciones de React.
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import starwarsYellow from '../../img/starwars_yellow.png';
 import { BtnFavorite } from "./BtnFavorite.jsx";
+import { Context } from "../store/appContext.js";
 
 export const Navbar = () => {
+	const  { store, actions } = useContext (Context)
+
 	return (
 	
-	<nav className="navbar navbar-expand-lg navbar-light bg-light">
-	<div className="container-fluid">
-	  <Link to="/"><span className="navbar-brand" href="#">Star War</span></Link>
-	  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span className="navbar-toggler-icon"></span>
-	  </button>
-	  <div className="collapse navbar-collapse" id="navbarNav">
-		<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-		  <li className="nav-item">
-		  <Link to="/"> <span className="nav-link active" aria-current="page" href="#"></span></Link>
-		  </li>
-		  <li className="nav-item">
-		  <Link to="/characters">
-					<button className="btn btn-primary me-3">Characters</button>
-				</Link>
-		  </li>
-		  <li className="nav-item">
-		  <button className="btn btn-primary me-3">Cualquiercosa</button>
-		  </li>
-		  <li className="nav-item dropdown">
-			<BtnFavorite/>
-		  </li>
-		</ul>
-	  </div>
-	</div>
-  </nav>
-	);
+		<nav className="navbar fixed-top bg-black m-0 ps-3 pe-3">
+		<Link to= "/" className="navbar-brand">
+			<span><img src={ starwarsYellow } alt="starwars logo" width="110" height="60"/></span>
+		</Link>
+		<Link to= "/characters" className="nav-link text-decoration-none text-white fs-4">Characters</Link>
+		<Link to= "/planets" className="nav-link text-decoration-none text-white fs-4">Planets</Link>
+		<Link to= "/starships" className="nav-link text-decoration-none text-white fs-4">Starships</Link>
+		<div className="ml-auto">
+		<BtnFavorite />
+			
+		</div>
+	</nav>
+);
 };

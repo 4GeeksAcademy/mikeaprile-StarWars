@@ -2,16 +2,17 @@
 import React from "react";
 
 //Componentes.
-import { Footer } from "../component/Footer.jsx";
 
+import Letras from '../../img/letras.gif'
+ 
 //Estilos de CSS.
 import "../../styles/home.css";
 
 
 export const Home = () => (
-	<div className="text-center mt-5">
-	
+	<div>
+	<span><img className= "imagen2" src={ Letras } alt="starwars"/></span>
 		
-		<Footer/>
+		
 	</div>
 );
